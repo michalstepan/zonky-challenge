@@ -1,5 +1,6 @@
 package cz.michalstepan.zonky;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,9 +14,9 @@ import org.springframework.web.client.RestTemplate;
 public class AppConfig {
 
     @Bean
-    public RestTemplate restTemplateZonky() {
+    public RestTemplate restTemplateZonky(@Value("${app.zonky.rooturi}") String zonkyRootUri) {
         return new RestTemplateBuilder()
-                .rootUri("https://api.zonky.cz")
+                .rootUri(zonkyRootUri)
                 .build();
     }
 }
