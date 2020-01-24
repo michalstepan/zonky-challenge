@@ -5,7 +5,7 @@ import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 
 @Data
-class Loan {
+public class Loan {
 
     private static final String PRINT_PATTERN = "dd.MM.yyyy HH:mm:ss";
 
